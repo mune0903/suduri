@@ -1,0 +1,10 @@
+include ':app',
+        ':core',
+        ':data:api',
+        ':data:repository',
+        ':feature:home',
+        ':feature:favorite',
+        ':feature:search',
+        ':feature:setting'
+
+rootProject.name = "SUZURITOWN"

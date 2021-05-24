@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SUZURITOWN</string>
+    <string name="home">ホーム</string>
+    <string name="favorite">お気に入り</string>
+    <string name="search">探す</string>
+    <string name="setting">設定</string>
+</resources>

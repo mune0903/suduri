@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/home_dest">
+
+    <fragment
+        android:id="@+id/home_dest"
+        android:name="com.mune0903.feature.home.ui.HomeFragment"
+        android:label="@string/home">
+    </fragment>
+
+    <fragment
+        android:id="@+id/favorite_dest"
+        android:name="com.mune0903.feature.favorite.ui.FavoriteFragment"
+        android:label="@string/favorite">
+    </fragment>
+
+    <fragment
+        android:id="@+id/search_dest"
+        android:name="com.mune0903.feature.search.ui.SearchFragment"
+        android:label="@string/search">
+    </fragment>
+
+    <fragment
+        android:id="@+id/setting_dest"
+        android:name="com.mune0903.feature.setting.ui.SettingFragment"
+        android:label="@string/setting">
+    </fragment>
+
+</navigation>
