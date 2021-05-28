@@ -4,6 +4,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -52,6 +53,9 @@ dependencies {
     implementation Dep.AndroidX.constraintLayout
     implementation Dep.AndroidX.navigation
     implementation Dep.AndroidX.navigationKtx
+    implementation Dep.DaggerHilt.hilt
+    kapt Dep.DaggerHilt.compiler
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

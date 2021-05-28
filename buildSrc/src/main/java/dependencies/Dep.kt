@@ -18,6 +18,7 @@ object Dep {
         val appcompat = "1.3.0"
         val material = "1.3.0"
         val constraintlayout = "2.0.4"
+        val hilt = "2.35.1"
     }
 
     object AndroidX {
@@ -36,6 +37,13 @@ object Dep {
         val stdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
         val plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
         val serialization = "org.jetbrains.kotlin:kotlin-serialization:${Versions.kotlin}"
+        val runtime = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0"
+    }
+
+    object DaggerHilt {
+        val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+        val compiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+        val plugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
     }
 
     object OkHttp {

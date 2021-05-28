@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.navigation_activity)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        toolbar.setTitle(R.string.app_name)
+        toolbar.setTitle(R.string.home)
         setSupportActionBar(toolbar)
 
         val host: NavHostFragment = supportFragmentManager

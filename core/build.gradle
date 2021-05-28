@@ -3,7 +3,7 @@ import dependencies.Dep
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
-    id 'org.jetbrains.kotlin.plugin.serialization'
+    id 'kotlinx-serialization'
     id 'kotlin-kapt'
 }
 
@@ -19,6 +19,12 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        def properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+        def API_KEY = properties.getProperty("api_key")
+        buildConfigField "String", "API_KEY", "${API_KEY}"
+        buildConfigField "String", "BASE_URL", "\"https://suzuri.jp/api/\""
     }
 
     buildTypes {
@@ -38,12 +44,20 @@ android {
 
 dependencies {
     implementation Dep.Kotlin.stdLib
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1"
     implementation Dep.AndroidX.ktx
     implementation Dep.AndroidX.appcompat
     implementation Dep.AndroidX.material
     implementation Dep.AndroidX.constraintLayout
     implementation Dep.AndroidX.navigation
     implementation Dep.AndroidX.navigationKtx
+    implementation Dep.DaggerHilt.hilt
+    kapt Dep.DaggerHilt.compiler
+    implementation Dep.OkHttp.okHttp
+    implementation Dep.retrofit
+    implementation Dep.coroutineCore
+    implementation Dep.coroutineAndroid
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
