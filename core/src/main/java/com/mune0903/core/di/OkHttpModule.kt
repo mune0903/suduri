@@ -1,5 +1,8 @@
 package com.mune0903.core.di
 
+import com.mune0903.core.BuildConfig
+import com.mune0903.core.okhttp.ApiInterceptor
+import com.mune0903.core.okhttp.LoggingInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,9 +17,26 @@ object OkHttpModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient() : OkHttpClient {
+    fun provideLoggingInterceptor(): LoggingInterceptor {
+        return LoggingInterceptor()
+    }
+
+    @Provides
+    @Singleton
+    fun provideApiInterceptor(): ApiInterceptor {
+        return ApiInterceptor(BuildConfig.AUTH_HEADER, BuildConfig.API_KEY)
+    }
+
+    @Provides
+    @Singleton
+    fun provideOkHttpClient(
+        loggingInterceptor: LoggingInterceptor,
+        apiInterceptor: ApiInterceptor
+    ): OkHttpClient {
         return OkHttpClient()
             .newBuilder()
+            .addInterceptor(loggingInterceptor)
+            .addInterceptor(apiInterceptor)
             .connectTimeout(15, TimeUnit.SECONDS)
             .writeTimeout(15, TimeUnit.SECONDS)
             .readTimeout(15, TimeUnit.SECONDS)

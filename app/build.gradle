@@ -41,6 +41,8 @@ android {
 
 dependencies {
     implementation project(":core")
+    implementation project(":data:api")
+    implementation project(":data:repository")
     implementation project(":feature:home")
     implementation project(":feature:favorite")
     implementation project(":feature:search")
@@ -50,11 +52,14 @@ dependencies {
     implementation Dep.AndroidX.ktx
     implementation Dep.AndroidX.appcompat
     implementation Dep.AndroidX.material
+    implementation Dep.OkHttp.okHttp
+    implementation Dep.retrofit
     implementation Dep.AndroidX.constraintLayout
     implementation Dep.AndroidX.navigation
     implementation Dep.AndroidX.navigationKtx
     implementation Dep.DaggerHilt.hilt
     kapt Dep.DaggerHilt.compiler
+    implementation "androidx.fragment:fragment-ktx:1.3.4"
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
