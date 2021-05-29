@@ -24,6 +24,8 @@ object Dep {
     object AndroidX {
         val viewModel = "androidx.lifecycle:lifecycle-viewmodel:${Versions.lifecycle}}"
         val lifecycle = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
+        val viewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+        val lifecycleKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
         val ktx = "androidx.core:core-ktx:${Versions.kotlin}"
         val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
         val material = "com.google.android.material:material:${Versions.material}"
@@ -68,6 +70,6 @@ object Dep {
     val koinAndroid = "org.koin:koin-android:${Versions.koin}"
     val koinAndroidScope = "org.koin:koin-androidx-scope:${Versions.koin}"
     val koinViewModel = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
-    val coroutineCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutine}"
-    val coroutineAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutine}"
+    val coroutineCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlin}"
+    val coroutineAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kotlin}"
 }
