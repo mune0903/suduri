@@ -33,13 +33,23 @@ object OkHttpModule {
         loggingInterceptor: LoggingInterceptor,
         apiInterceptor: ApiInterceptor
     ): OkHttpClient {
-        return OkHttpClient()
-            .newBuilder()
-            .addInterceptor(loggingInterceptor)
-            .addInterceptor(apiInterceptor)
-            .connectTimeout(15, TimeUnit.SECONDS)
-            .writeTimeout(15, TimeUnit.SECONDS)
-            .readTimeout(15, TimeUnit.SECONDS)
-            .build()
+        return if (BuildConfig.DEBUG) {
+            OkHttpClient()
+                .newBuilder()
+                .addInterceptor(loggingInterceptor)
+                .addInterceptor(apiInterceptor)
+                .connectTimeout(15, TimeUnit.SECONDS)
+                .writeTimeout(15, TimeUnit.SECONDS)
+                .readTimeout(15, TimeUnit.SECONDS)
+                .build()
+        } else {
+            OkHttpClient()
+                .newBuilder()
+                .addInterceptor(apiInterceptor)
+                .connectTimeout(15, TimeUnit.SECONDS)
+                .writeTimeout(15, TimeUnit.SECONDS)
+                .readTimeout(15, TimeUnit.SECONDS)
+                .build()
+        }
     }
 }
