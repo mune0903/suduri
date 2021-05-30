@@ -17,23 +17,10 @@ object OkHttpModule {
 
     @Provides
     @Singleton
-    fun provideLoggingInterceptor(): LoggingInterceptor {
-        return LoggingInterceptor()
-    }
-
-    @Provides
-    @Singleton
-    fun provideApiInterceptor(): ApiInterceptor {
-        return ApiInterceptor(BuildConfig.AUTH_HEADER, BuildConfig.API_KEY)
-    }
-
-    @Provides
-    @Singleton
-    fun provideOkHttpClient(
-        loggingInterceptor: LoggingInterceptor,
-        apiInterceptor: ApiInterceptor
-    ): OkHttpClient {
+    fun provideOkHttpClient(): OkHttpClient {
+        val apiInterceptor = ApiInterceptor(BuildConfig.AUTH_HEADER, BuildConfig.API_KEY)
         return if (BuildConfig.DEBUG) {
+            val loggingInterceptor = LoggingInterceptor()
             OkHttpClient()
                 .newBuilder()
                 .addInterceptor(loggingInterceptor)

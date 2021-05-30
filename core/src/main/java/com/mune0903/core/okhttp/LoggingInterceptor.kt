@@ -7,7 +7,6 @@ import okhttp3.internal.concurrent.TaskRunner.Companion.logger
 import java.io.IOException
 import javax.inject.Singleton
 
-@Singleton
 class LoggingInterceptor : Interceptor {
 
     @Throws(IOException::class)
