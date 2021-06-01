@@ -46,6 +46,7 @@ dependencies {
     implementation Dep.Kotlin.stdLib
     implementation Dep.AndroidX.ktx
     implementation Dep.AndroidX.appcompat
+    implementation Dep.AndroidX.material
     implementation Dep.AndroidX.constraintLayout
     implementation Dep.DaggerHilt.hilt
     kapt Dep.DaggerHilt.compiler

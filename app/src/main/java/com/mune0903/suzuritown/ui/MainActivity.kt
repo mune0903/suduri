@@ -17,10 +17,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.navigation_activity)
 
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        toolbar.setTitle(R.string.home)
-        setSupportActionBar(toolbar)
-
         val host: NavHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment? ?: return
 
