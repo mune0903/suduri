@@ -1,1 +1,1 @@
-# suzuri-town
+# suduri
